@@ -1,28 +1,51 @@
-Instructions:
+# Finnhub Stock App
 
-You can choose either of the two exercises. We encourage you to send us whatever you have done, even if you don't finish the test.
+![home](https://github.com/user-attachments/assets/1e3d4ec7-8aaa-4ac0-9c4d-adbfb67b3022) ![charts](https://github.com/user-attachments/assets/5304ecb9-302f-43c3-9bd4-ffba44a8a7f1) ![config](https://github.com/user-attachments/assets/1c88acea-9683-4063-86c5-be662d8e0132)
 
-The easy one:
+## Descripción
 
-1. Create a React Native app (Typescript and using components, not functional) for showing stock data in real time using Finnhub Stock APIs
+Esta aplicación de React Native muestra datos de acciones en tiempo real utilizando la API de Finnhub Stock.
 
-2. The app should have 3 screens:
+La aplicación tiene tres pantallas principales:
 
-a. Add alert: A form with 2 fields, a dropdown to select a stock to watch and an input for price alert.
+1. **Añadir alerta**: Un formulario con dos campos, un menú desplegable para seleccionar una acción y un campo de entrada para el precio de alerta.
+2. **Lista de vigilancia**: Muestra las acciones como tarjetas, mostrando el nombre, el valor y el cambio marginal en porcentaje.
+3. **Gráfico**: Grafica el valor de todas las acciones vigiladas en valor en dólares.
 
-b. Watchlist (similar to Finnhub home at the top), for showing the stock as cards, showing the name, value and marginal change as a percentage.
+## Requisitos
 
-"p": 7296.89, // last price
-"s": "BINANCE:BTCUSDT", // Symbol
-"t": 1575526691134, // UNIX milliseconds timestamp.
-"v": 0.011467 Volume.
+- Node.js (versión 16 o superior)
+- Expo CLI (puedes instalarlo globalmente con `npm install -g expo-cli`)
 
-c. A graph for plotting the value of all stocks watched in dollar value.
+## Instalación
 
-3. For real time tracking use Sockets API
+1. Clona este repositorio en tu máquina local:
+    ```bash
+    git clone https://github.com/dbracamonte/finnhub-stock-app
+    ```
+2. Navega al directorio del proyecto:
+    ```bash
+    cd finnhub-stock-app
+    ```
+3. Instala las dependencias:
+    ```bash
+    npm install
+    ```
+4. Ejecutar aplicación:
 
-The real challenge, same as the easy one but:
+    en iOS:
+    ```bash
+    npm run ios
+    ```
+    en Android:
+    ```bash
+    npm run android
+    ```
 
-1. Adding Auth0 authentication
+## Configuración
 
-2. Adding local push notification when the price goes higher than the price alert
+Necesitarás una API Key de Finnhub para obtener datos de acciones en tiempo real. Regístrate en [Finnhub](https://finnhub.io/) para obtener una API Key gratuita y luego crea un archivo `.env` en la raíz del proyecto con el siguiente contenido:
+
+```env
+EXPO_PUBLIC_API_BASE_URL=https://finnhub.io/api/v1
+EXPO_PUBLIC_API_KEY=api_key_aqui
